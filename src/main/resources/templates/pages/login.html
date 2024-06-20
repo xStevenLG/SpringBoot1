@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http//thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script th:src="@{/js/tailwind.config.js}"></script>
+
+</head>
+<body class="w-full h-auto flex flex-col bg-[url(https://res.cloudinary.com/dd8qgumcz/image/upload/f_auto,q_auto/v1/Proyectos/Ejemplo1/fnyp8ktplrifvggmtayv)]">
+    <header th:insert="fragments/header.html :: header" class="w-full h-20"></header>
+    <br><br>
+    <article th:replace="./fragments/login :: login"></article>
+    <br><br>
+    <footer th:insert="fragments/footer.html :: footer" class="w-full h-20 flex"></footer>
+</body>
+</html>

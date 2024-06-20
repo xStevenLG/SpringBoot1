@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http//thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script th:src="@{/js/tailwind.config.js}"></script>
+</head>
+<body class="w-full h-[100vh] flex justify-center items-center">
+<section th:fragment="login" class="w-full h-full flex-1 flex justify-center items-center">
+    <form class="w-[40%] h-[30%] flex flex-col justify-evenly items-center border-2 border-solid border-blue-500 p-10 bg-white rounded" id="login1">
+        <img src="https://res.cloudinary.com/dd8qgumcz/image/upload/f_auto,q_auto/v1/Proyectos/Ejemplo1/oxogw1vnp9xkmccuexaw" width="150" height="150">
+        <br>
+        <input type="email" placeholder="Correo" class="rounded-md border-solid border-b-2 border-blue-900 p-2 outline-none focus:border-green-700 focus:border-2">
+        <input type="password" placeholder="Contraseña" class="rounded-md border-solid border-b-2 border-blue-900 p-2 outline-none focus:border-green-700 focus:border-2 mt-2">
+        <br>
+        <span><input type="checkbox"> Acepto terminos y condiciones</span>
+        <input type="submit" value="Ingresar" class="w-[260px] bg-blue-700 rounded mt-6" style="height: 35px">
+    </form>
+</section>
+</body>
+
+</html>
