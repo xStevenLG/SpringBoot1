@@ -18,5 +18,16 @@ public class ServiceRegistro {
     public Registro saveRegister(Registro registro){
         return repositoryRegister.save(registro);
     }
+
+    public void deleteRegister(Long id) {
+        repositoryRegister.deleteById(id);
+    }
+    public Registro getRegisterById(Long id) {
+        return repositoryRegister.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid register Id:" + id));
+    }
+
+    public void updateRegister(Registro registro) {
+        repositoryRegister.save(registro);
+    }
 }
 

@@ -27,12 +27,6 @@ public class UserController {
         return "pages/index";
     }
 
-    @GetMapping("/registro")
-    public String ListRegister(Model model){
-        model.addAttribute("result", serviceRegistro.getAllRegistro());
-        return "fragments/dataSave";
-    }
-
     @GetMapping("/")
     public String index(){
         return "pages/index";
@@ -49,8 +43,26 @@ public class UserController {
         return "pages/login";
     }
 
+    @GetMapping("/lista/{id}")
+    public String deleteRegister(@PathVariable Long id) {
+        serviceRegistro.deleteRegister(id);
+        return "redirect:/lista";
+    }
+    @GetMapping("/registro/edit/{id}")
+    public String showEditForm(@PathVariable("id") Long id, Model model) {
+        Registro registro = serviceRegistro.getRegisterById(id);
+        model.addAttribute("registro", registro);
+        return "pages/editRegistro"; // Nombre de la vista del formulario de edición
+    }
 
-
-
+    @PostMapping("/registro/update/{id}")
+    public String updateRegister(@PathVariable("id") Long id, @ModelAttribute Registro registro) {
+        registro.setId(id); // Asegura que el ID esté establecido
+        serviceRegistro.updateRegister(registro);
+        return "redirect:/lista"; // Redirige a la lista de registros después de actualizar
+    }
 }
+
+
+
 

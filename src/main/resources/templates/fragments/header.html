@@ -8,9 +8,10 @@
 
 <nav th:fragment="header" class="w-full h-full p-2 bg-blue-400">
     <ul class="w-full h-full flex justify-around">
-        <li>Inicio</li>
-        <li>Información</li>
-        <li>Contactos</li>
+        <a th:href="@{/}"><li>Inicio</li></a>
+        <a th:href="@{/lista}"><li>Lista</li></a>
+        <a th:href="@{/login}"><li>Login</li></a>
+        <a th:href="@{/register/new}"><li>Registro</li></a>
     </ul>
 </nav>
 

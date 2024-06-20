@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar Registro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script th:src="@{/js/tailwind.config.js}"></script>
+</head>
+<body class="w-full h-[100vh] flex justify-center items-center bg-yellow-50 bg-[url(https://res.cloudinary.com/dd8qgumcz/image/upload/f_auto,q_auto/v1/Proyectos/Ejemplo1/fnyp8ktplrifvggmtayv)]">
+    <section class="w-full h-full flex justify-center items-center">
+    <div class="absolute w-[40%] h-[80%] bg-white opacity-80 rounded-md border-solid border-2 border-blue-900"></div>
+    <form th:action="@{/registro/update/{id}(id=${registro.id})}" th:object="${registro}" method="post" class="relative w-[50%] flex flex-col items-center justify-evenly">
+
+        <h1>Editar Registro</h1>
+        <input type="text" placeholder="Nombre" th:field="*{nombre}"
+               class="rounded-md border-solid border-b-2 border-blue-900 p-2 outline-none focus:border-green-700 focus:border-2 mb-2 mt-8" required>
+
+        <input type="text" placeholder="Apellido" th:field="*{apellido}"
+               class="rounded-md border-solid border-b-2 border-blue-900 p-2 outline-none focus:border-green-700 focus:border-2 mb-2" required>
+
+        <input type="email" placeholder="Correo" th:field="*{correo}"
+               class="rounded-md border-solid border-b-2 border-blue-900 p-2 outline-none focus:border-green-700 focus:border-2 mb-2" required>
+
+        <input type="password" placeholder="Contraseña" th:field="*{contrasena}"
+               class="rounded-md border-solid border-b-2 border-blue-900 p-2 outline-none focus:border-green-700 focus:border-2 mb-2" required>
+
+        <label>Description
+        </label>
+        <textarea rows="3" cols="25"
+                  th:field="*{descripcion}"
+                  class="border-solid border-b-2 border-blue-900 p-2 outline-none focus:border-green-700 focus:border-2">
+            </textarea>
+
+        <input type="submit" value="Enviar"
+               class="w-[20%] center bg-blue-200 rounded mt-6">
+    </form>
+</section>
+</body>
+</html>
